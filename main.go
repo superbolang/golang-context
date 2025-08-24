@@ -116,7 +116,7 @@ func operationWithCancel(ctx context.Context, id int, resultChan chan<- int) {
 		}
 		fmt.Printf("Worker %d finish\n", id)
 	case <-ctx.Done():
-		// If cancel signal received before parameter found
+		// If parameter is found, then cancel signal is activated
 		fmt.Printf("Worker %d cancelled\n", id)
 	}
 }
